@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hi, I'm María Valentina.</title>
+<meta name="description" content="María Valentina Herrera, Data Science × Business student at York University (Schulich). Credit-risk analysis, SQL, Python and Power BI.">
+<meta property="og:title" content="María Valentina Herrera · Data Science × Business">
+<meta property="og:description" content="I use data to answer business questions, and explain the answer so people can act on it.">
+<meta property="og:image" content="assets/img/lending-club-dashboard.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="p2">
+
+<!-- Reusable icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7zm0 2.9V17h16V9.9l-8 5z"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3zm3.3 6.5V18h2.6V9.5zm1.3-4.1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM10.6 9.5V18h2.6v-4.4c0-1.2.3-2.3 1.7-2.3s1.4 1.3 1.4 2.4V18h2.6v-4.9c0-2.4-.5-4.2-3.3-4.2-1.3 0-2.2.7-2.6 1.4V9.5z"/></symbol>
+  <symbol id="i-cv" viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h8l5 5v15H6zm7 1.5V8h4.5zM8.5 12h8v1.5h-8zm0 3h8v1.5h-8zm0 3h5v1.5h-5z"/></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2c4.4 0 8 1.3 8 3v14c0 1.7-3.6 3-8 3s-8-1.3-8-3V5c0-1.7 3.6-3 8-3zm6 6.3C16.6 9 14.4 9.5 12 9.5S7.4 9 6 8.3V11c0 .6 2.6 1.5 6 1.5s6-.9 6-1.5zm0 6C16.6 15 14.4 15.5 12 15.5S7.4 15 6 14.3V17c0 .6 2.6 1.5 6 1.5s6-.9 6-1.5z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><path fill="currentColor" d="M10 3a7 7 0 0 1 5.6 11.2l5.6 5.6-1.4 1.4-5.6-5.6A7 7 0 1 1 10 3zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></symbol>
+  <symbol id="i-bars" viewBox="0 0 24 24"><path fill="currentColor" d="M3 20h18v2H3zM5 11h3v8H5zm5.5-6h3v14h-3zM16 8h3v11h-3z"/></symbol>
+  <symbol id="i-py" viewBox="0 0 24 24"><path fill="currentColor" d="M11.9 2c-5 0-4.7 2.2-4.7 2.2v2.3H12v.7H5.3S2 6.8 2 11.9s2.9 4.9 2.9 4.9h1.7v-2.4s-.1-2.9 2.8-2.9h4.8s2.7 0 2.7-2.6V4.6S17.3 2 11.9 2zM9.3 3.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8zM12.1 22c5 0 4.7-2.2 4.7-2.2v-2.3H12v-.7h6.7s3.3.4 3.3-4.7-2.9-4.9-2.9-4.9h-1.7v2.4s.1 2.9-2.8 2.9H9.8s-2.7 0-2.7 2.6v4.3S6.7 22 12.1 22zm2.6-1.5a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8z"/></symbol>
+  <symbol id="i-fx" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h2v16h16v2H3zm4 12 4-5 3 3 5-7 1.6 1.2-6.4 9-3-3-2.6 3.3z"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3zm2 2v3h6V5zm8 0v3h6V5zM5 10v4h6v-4zm8 0v4h6v-4zM5 16v3h6v-3zm8 0v3h6v-3z"/></symbol>
+  <symbol id="i-pres" viewBox="0 0 24 24"><path fill="currentColor" d="M2 3h20v2h-1v11H3V5H2zm3 2v9h14V5zm6 12h2v2.6l3.2 2.1-1.1 1.6L12 19.4l-3.1 1.9-1.1-1.6 3.2-2.1z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path fill="currentColor" d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4zM4 21h16v1.5H4z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h13v9H7l-4 3zm5 11h10l3 2.5V6h-3v8z"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 9l7 7 7-7"/></symbol>
+</svg>
+
+<!-- SPLASH -->
+<header class="splash" id="top">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="inner">
+    <h1>María Valentina Herrera</h1>
+    <div class="title">Data Science × Business</div>
+    <div class="icons">
+      <a href="mailto:mvalen6@my.yorku.ca" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+      <a href="https://github.com/mvalen6-lab" aria-label="GitHub"><svg><use href="#i-gh"/></svg></a>
+      <a href="https://www.linkedin.com/in/maria-valentina-herrera-797923340" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a>
+      <a href="assets/Maria_Valentina_Herrera_Resume.pdf" aria-label="Résumé"><svg><use href="#i-cv"/></svg></a>
+    </div>
+    <nav class="mini-nav" aria-label="Sections"><a href="#about">About</a> · <a href="#projects">Projects</a> · <a href="#skills">Skills</a> · <a href="#reflections">Reflections</a> · <a href="#contact">Contact</a></nav>
+  </div>
+  <a class="down" href="#about" aria-label="Scroll to About"><svg><use href="#i-down"/></svg></a>
+</header>
+
+<main>
+<!-- ABOUT -->
+<section class="block" id="about"><div class="narrow">
+  <!-- Replace with your photo: assets/img/headshot.jpg -->
+  <img class="portrait" src="assets/img/avatar.svg" alt="María Valentina Herrera">
+  <p class="bio">I'm a second-year Honours Data Science student at York University, in the Business Stream with the Schulich School of Business. I use data to answer business questions, and I explain the answer so people can act on it. I grew up in Colombia, moved to Toronto with my family, and work in English and Spanish. I'm looking for a <strong>Summer 2027 data or business analyst co-op</strong> in Toronto, especially in banking and finance. Feel free to get in touch.</p>
+  <div class="badges"><span>York University · Schulich Business Stream</span><span>Credit-risk project · 733K loans</span><span>Bloomberg Market Concepts (in progress)</span><span>English · Spanish</span></div>
+
+  <div class="pillar2">
+    <h2>Analyzing</h2>
+    <div class="row"><svg><use href="#i-db"/></svg><svg><use href="#i-search"/></svg><svg><use href="#i-bars"/></svg></div>
+    <p>I clean large datasets, query them in SQL and look for the pattern that answers the business question. In my Lending Club project I took 2.26 million loans down to the 733,102 that could answer it fairly.</p>
+  </div>
+  <div class="pillar2">
+    <h2>Modelling</h2>
+    <div class="row"><svg><use href="#i-py"/></svg><svg><use href="#i-fx"/></svg><svg><use href="#i-sheet"/></svg></div>
+    <p>I build and validate models in Python, then turn them into numbers a business can use, like expected loss, approval cut-offs and stress tests in Excel.</p>
+  </div>
+  <div class="pillar2">
+    <h2>Communicating</h2>
+    <div class="row"><svg><use href="#i-pres"/></svg><svg><use href="#i-pen"/></svg><svg><use href="#i-chat"/></svg></div>
+    <p>A finding nobody understands is a finding nobody uses. I write up results, build dashboards and present recommendations for people who didn't run the query.</p>
+  </div>
+</div></section>
+
+<!-- PROJECTS -->
+<section class="block" id="projects">
+  <h2 class="featured-title">Featured Projects</h2>
+  <div class="pgrid">
+    <article class="proj">
+      <img src="assets/img/lending-club-dashboard.jpg" alt="Power BI dashboard for the Lending Club credit-risk analysis">
+      <h3>Credit Risk Analysis: Is Lending Club Pricing Risk Correctly?</h3>
+      <div class="techline">Python · pandas · scikit-learn · SQL · Excel · Power BI</div>
+      <p>From 2.26M raw loans to a recommendation a bank could act on. A logistic regression (AUC 0.71) and an expected-loss model show the riskiest loans earn the least; cutting the riskiest band raises net profit by 17.5%.</p>
+      <div class="pills"><a href="projects/lending-club-credit-risk.html">Case study</a><a href="https://github.com/mvalen6-lab/lending-club-credit-risk">Code</a></div>
+    </article>
+    <article class="proj">
+      <img src="assets/img/ymm-check.jpg" alt="YMM Check social media posts">
+      <h3>YMM Check: Youth Money Matters</h3>
+      <div class="techline">Data storytelling · Research · Canva</div>
+      <p>A credit-awareness campaign for young Canadians built on Equifax and FCAC data: social posts, a website and a pitch to bank executives on why missed payments among young borrowers are their business problem.</p>
+      <div class="pills"><a href="https://valeherreraugc.my.canva.site/ymm-check">Campaign site</a></div>
+    </article>
+    <article class="proj">
+      <div class="txtimg">“Last semester I had five courses and one job, and I never submitted any assignment late.”</div>
+      <h3>Cover Letter: Applying to Be a Project Partner</h3>
+      <div class="techline">WRIT 2202 · Professional writing</div>
+      <p>My first draft was full of promises. In revision I replaced them with evidence, which became my biggest lesson in the course: proof persuades, promises don't.</p>
+    </article>
+    <article class="proj">
+      <div class="txtimg empty">Your next project</div>
+      <h3>SQL Analytics Project</h3>
+      <div class="techline">SQL · window functions · CTEs</div>
+      <p>Practising window functions and CTEs on DataLemur. Replace this card with your next project when it's ready.</p>
+    </article>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="block" id="skills" style="background:#f7f8fb">
+  <div class="narrow"><h2 class="featured-title" style="margin-bottom:40px">Skills</h2></div>
+  <div class="skills">
+    <div class="skill"><h3>Data &amp; technical</h3><ul>
+      <li><b>SQL:</b> JOINs, GROUP BY/HAVING, aggregates, NULLs; learning window functions and CTEs</li>
+      <li><b>Python:</b> pandas, scikit-learn (logistic regression)</li>
+      <li><b>Excel:</b> expected-loss model with adjustable assumptions</li>
+      <li><b>Power BI</b> dashboards · <b>R</b> · GitHub · Kaggle · SQLite</li></ul></div>
+    <div class="skill"><h3>Finance &amp; business</h3><ul>
+      <li>Credit risk: PD, LGD, expected loss, approval cut-offs, stress testing</li>
+      <li>Bloomberg Market Concepts (in progress)</li>
+      <li>Schulich Business Stream coursework</li></ul></div>
+    <div class="skill"><h3>Communication</h3><ul>
+      <li>Write-ups and READMEs for non-technical readers</li>
+      <li>Structured peer reviews on Kritik</li>
+      <li>Networking through LinkedIn and York/Schulich events</li>
+      <li>Bilingual: English and Spanish</li></ul></div>
+    <div class="skill"><h3>Professional</h3><ul>
+      <li>Five courses plus a job, zero late submissions</li>
+      <li>IT Assistant, Schulich School of Business</li>
+      <li>Software testing on uTest</li></ul></div>
+  </div>
+</section>
+
+<!-- REFLECTIONS -->
+<section class="block" id="reflections"><div class="narrow">
+  <h2 class="featured-title" style="margin-bottom:24px">Reflections</h2>
+  <p class="bio">Before WRIT 2202, I thought the hard part of data science was the math and the code. This course showed me that half of it is getting the result across.</p>
+  <div class="lessons" style="margin-top:36px">
+    <div><h3>Start with the audience</h3><p>I ask who is reading and what they need before I write a README, an email or a slide.</p></div>
+    <div><h3>Evidence beats promises</h3><p>That's why this portfolio links to real work instead of listing adjectives.</p></div>
+    <div><h3>Framing matters</h3><p>The same result can be clear or confusing depending on how it's framed.</p></div>
+    <div><h3>Feedback is a skill</h3><p>Reviewing classmates on Kritik made me a better reviewer of my own work.</p></div>
+  </div>
+  <div class="callout" style="text-align:left"><h3 style="margin-bottom:6px">The most valuable skill I'm taking with me</h3><p style="margin:0">Presenting information the right way for the person in front of me. I'm bringing that into every write-up, coffee chat and interview.</p></div>
+
+  <h3 style="margin:64px 0 6px;font-size:24px">Fun facts</h3>
+  <ul class="facts2">
+    <li>I like reports that end with a number and a recommendation, not “some trends were observed.”</li>
+    <li>I'd rather finish my part early than chase teammates at 11:58 p.m.</li>
+    <li>Outside of data: finance news, food and travel.</li>
+  </ul>
+</div></section>
+
+<!-- CONTACT -->
+<section class="contact block" id="contact"><div class="narrow">
+  <h2 style="font-size:34px;margin-bottom:12px">Let's connect</h2>
+  <p class="section-intro" style="margin:0 auto 26px">Looking for a Summer 2027 co-op or internship in data analysis, business analysis or finance in Toronto.</p>
+  <div class="links" style="justify-content:center">
+    <a class="btn primary" href="mailto:mvalen6@my.yorku.ca">mvalen6@my.yorku.ca</a>
+    <a class="btn" href="https://www.linkedin.com/in/maria-valentina-herrera-797923340">LinkedIn</a>
+    <a class="btn" href="https://github.com/mvalen6-lab">GitHub</a>
+    <a class="btn" href="assets/Maria_Valentina_Herrera_Resume.pdf">Résumé</a>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <div class="ql"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#reflections">Reflections</a><a href="#contact">Contact</a></div>
+  © 2026 María Valentina Herrera · Toronto
+</footer>
+
+<script>
+{
+  const c = document.getElementById('net'), x = c.getContext('2d');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W, H, pts = [];
+  const size = () => {
+    const r = devicePixelRatio || 1;
+    W = c.clientWidth; H = c.clientHeight;
+    c.width = W * r; c.height = H * r; x.setTransform(r, 0, 0, r, 0, 0);
+    const n = Math.round(Math.min(110, W * H / 12000));
+    pts = Array.from({length: n}, () => ({x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .45, vy: (Math.random() - .5) * .45}));
+  };
+  const frame = () => {
+    x.clearRect(0, 0, W, H);
+    for (const p of pts) {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+    }
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i + 1; j < pts.length; j++) {
+        const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, d = Math.hypot(dx, dy);
+        if (d < 140) { x.strokeStyle = `rgba(23,36,74,${0.14 * (1 - d / 140)})`; x.beginPath(); x.moveTo(pts[i].x, pts[i].y); x.lineTo(pts[j].x, pts[j].y); x.stroke(); }
+      }
+      x.fillStyle = 'rgba(23,36,74,.28)'; x.beginPath(); x.arc(pts[i].x, pts[i].y, 2, 0, 7); x.fill();
+    }
+    if (!still) requestAnimationFrame(frame);
+  };
+  addEventListener('resize', size);
+  size(); frame();
+}
+</script>
+</body>
+</html>

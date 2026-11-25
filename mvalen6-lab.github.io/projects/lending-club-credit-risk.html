@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lending Club Credit Risk · María Valentina Herrera</title>
+<meta name="description" content="Is Lending Club charging enough interest for the risk it takes? Credit-risk case study with Python, SQL, Excel and Power BI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="container">
+  <a class="logo" href="../index.html">María Valentina Herrera</a>
+  <nav class="menu" aria-label="Main">
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#projects" aria-current="page">Projects</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#reflections">Reflections</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</div></header>
+
+<main class="container case">
+  <div class="case-hero reading">
+    <a class="back" href="../index.html#projects">← All projects</a>
+    <h1>Is Lending Club charging enough for the risk it takes?</h1>
+    <p class="role" style="font-size:18px">Credit-risk analysis of 733,102 personal loans · Completed November 2026</p>
+    <div class="tags"><span>Python · pandas</span><span>scikit-learn</span><span>SQL · SQLite</span><span>Excel</span><span>Power BI</span></div>
+    <div class="links"><a class="btn primary" href="https://github.com/mvalen6-lab/lending-club-credit-risk">View code on GitHub</a></div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><b>733,102</b><span>completed loans, 2013–2015</span></div>
+    <div class="kpi"><b>18.8%</b><span>default rate</span></div>
+    <div class="kpi"><b>0.71</b><span>model AUC on unseen loans</span></div>
+    <div class="kpi"><b>+17.5%</b><span>net profit with the new cut-off</span></div>
+  </div>
+
+  <figure><img src="../assets/img/lending-club-dashboard.jpg" alt="Power BI dashboard: default rate by grade, default rate by state, profit per dollar by risk band, predicted vs actual default"><figcaption>Power BI dashboard summarising the headline numbers</figcaption></figure>
+
+  <div class="reading">
+    <h2>The question</h2>
+    <p>Is a lender charging its borrowers enough interest for the risk it takes? I answered this with Lending Club's public loan data, from raw records to a decision a bank could act on.</p>
+
+    <h2>What I did</h2>
+    <ol>
+      <li><strong>Cleaning (pandas).</strong> Started from 2.26 million loans and narrowed them to 733,102 completed loans from 2013–2015. I kept only the 14 columns known when a loan is approved, so the model couldn't “cheat” with information from the future.</li>
+      <li><strong>Analysis (SQL).</strong> Loaded the data into SQLite and compared default and interest rates by grade, loan purpose, income, state and term using GROUP BY, HAVING and aggregates.</li>
+      <li><strong>Model (scikit-learn).</strong> Built a logistic regression that predicts default with an AUC of 0.71 on unseen loans. Predicted and actual default rates match within about 1 percentage point in all 10 risk bands.</li>
+      <li><strong>Expected loss (Excel).</strong> Calculated profit per risk band with PD × LGD × exposure, with adjustable assumptions and a stress test at 60% and 80% loss given default.</li>
+      <li><strong>Dashboard (Power BI).</strong> Summarised the headline numbers and findings on one page.</li>
+    </ol>
+
+    <h2>Key findings</h2>
+    <ul>
+      <li><strong>Risk rises much faster than price.</strong> Grade G loans default 8.9× more often than grade A loans (48.2% vs 5.4%) but pay only 3.6× the interest rate.</li>
+      <li><strong>The riskiest loans earn the least.</strong> Profit per dollar lent peaks at about 10% in the middle risk bands and falls to 3.4% in the riskiest band.</li>
+      <li><strong>One outlier can hide a pattern.</strong> Default and interest rates by loan purpose are strongly correlated (r = 0.88), but wedding loans alone drop that to 0.48.</li>
+    </ul>
+
+    <div class="reco"><b>Recommendation</b><p style="margin:8px 0 0">Stop approving the riskiest band and reprice or reject the second-riskiest. Under conservative assumptions, net profit rises by 17.5% ($89.1M → $104.8M) while exposure falls by $539M.</p></div>
+
+    <h2>Limits</h2>
+    <p>The data comes from one U.S. lender, and the loss rates are assumptions. The recommendation should be re-tested on a bank's own portfolio before it's used.</p>
+
+    <h2>What this shows</h2>
+    <p>I can take a real financial question from 2 million rows of raw data to a recommendation a bank could act on, and explain the result to someone who didn't run the analysis.</p>
+    <p style="margin:40px 0 72px"><a class="back" href="../index.html#projects">← Back to all projects</a></p>
+  </div>
+</main>
+
+<footer><div class="container">
+  <span>© 2026 María Valentina Herrera · Toronto</span>
+  <span><a href="../index.html">Home</a></span>
+</div></footer>
+</body>
+</html>
